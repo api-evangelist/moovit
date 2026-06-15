@@ -1,0 +1,3021 @@
+{
+  "item": [
+    {
+      "id": "1de9fc67-f9f5-45e1-b6e8-60bc47d59742",
+      "name": "Nearby",
+      "description": {
+        "content": "Locate stops, bikes, and scooters near a coordinate.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ac4d14ca-4d2c-44b5-9c5d-6e0cecfe4841",
+          "name": "Get Nearby Objects",
+          "request": {
+            "name": "Get Nearby Objects",
+            "description": {
+              "content": "Locate stops, bikes, or scooters within a radius of a coordinate. Max radius 5km, max 100 objects.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Nearby",
+                "GetNearbyObjects"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "lat",
+                  "value": "<double>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "lon",
+                  "value": "<double>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "radius",
+                  "value": "500"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "50"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "49443835-7054-4d1f-b47d-682e80f83679",
+              "name": "List of nearby transit objects.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Nearby",
+                    "GetNearbyObjects"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lat",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "lon",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "radius",
+                      "value": "500"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "a437f800-515c-45ab-a916-7de0de1e1986",
+      "name": "Stops",
+      "description": {
+        "content": "Stop metadata, lines served, reviews, and photos.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "591fcd5f-ba0c-40bb-a71d-5b563180fa92",
+          "name": "Get Stop Basic Info",
+          "request": {
+            "name": "Get Stop Basic Info",
+            "description": {
+              "content": "Name, location, transit type, and agency for a stop.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Stops",
+                "GetStopBasicInfo"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "stopId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fe874888-e249-4839-8d7a-1255872ddf46",
+              "name": "Basic stop info.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Stops",
+                    "GetStopBasicInfo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "stopId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fa5e22e3-82f6-4302-8862-da33f34635bd",
+          "name": "Get Stop Lines",
+          "request": {
+            "name": "Get Stop Lines",
+            "description": {
+              "content": "Lines that serve a stop.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Stops",
+                "GetStopLines"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "stopId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "049c1b14-df1a-445c-bff9-f4a100b24ea8",
+              "name": "Lines serving the stop.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Stops",
+                    "GetStopLines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "stopId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c2666386-3b2e-4dc7-ba27-cad2b0573c14",
+          "name": "Get Stop Reviews",
+          "request": {
+            "name": "Get Stop Reviews",
+            "description": {
+              "content": "User-submitted reviews and ratings for a stop.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Stops",
+                "GetStopReviews"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "stopId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e8973c08-0746-4ae8-b0dc-15eef38973ff",
+              "name": "Reviews and ratings.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Stops",
+                    "GetStopReviews"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "stopId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4645153e-3e8e-4733-8af1-180a533f0f0d",
+          "name": "Get Stop Photos",
+          "request": {
+            "name": "Get Stop Photos",
+            "description": {
+              "content": "User-uploaded photos of a stop.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Stops",
+                "GetStopPhotos"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "stopId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "da78d758-5576-48d3-b004-a9596ec53bd7",
+              "name": "Photos for the stop.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Stops",
+                    "GetStopPhotos"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "stopId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "682ffe18-83d7-460b-a272-be8b1f276aec",
+          "name": "Get Stop Details",
+          "request": {
+            "name": "Get Stop Details",
+            "description": {
+              "content": "Aggregated stop information.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Stops",
+                "GetStopDetails"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "stopId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e22eebc9-d40b-4613-88ce-659ce9ddc967",
+              "name": "Aggregated stop details.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Stops",
+                    "GetStopDetails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "stopId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "dd862318-1874-4c9e-9699-9c21fca51941",
+      "name": "Lines",
+      "description": {
+        "content": "Line metadata, stops, geometry, schedules, and alerts.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "22115878-9516-41da-b6b8-219be01a5afa",
+          "name": "Get Line Basic Info",
+          "request": {
+            "name": "Get Line Basic Info",
+            "description": {
+              "content": "Line number, name, color, and icon.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Lines",
+                "GetLineBasicInfo"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "lineId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a06172b0-6305-4fd0-84a3-5169f1e71949",
+              "name": "Basic line info.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Lines",
+                    "GetLineBasicInfo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lineId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "69f4b572-fd4f-4f41-b728-077e74d77e97",
+          "name": "Get Line Stops",
+          "request": {
+            "name": "Get Line Stops",
+            "description": {
+              "content": "All stops served by a line.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Lines",
+                "GetLineStops"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "lineId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7e6ddd38-393f-4bf1-bb73-18a5ed26b7ae",
+              "name": "Stops on the line.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Lines",
+                    "GetLineStops"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lineId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9cbf2263-fed0-4f07-903c-1756e0bcab0e",
+          "name": "Get Line Shape",
+          "request": {
+            "name": "Get Line Shape",
+            "description": {
+              "content": "Geographic route geometry for a line.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Lines",
+                "GetLineShape"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "lineId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7e02e6fa-1687-4b7d-b8f7-17a6c56dde95",
+              "name": "Encoded line geometry.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Lines",
+                    "GetLineShape"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lineId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5e524112-3a72-4c82-b7de-f273db38b140",
+          "name": "Get Line Pattern Shape",
+          "request": {
+            "name": "Get Line Pattern Shape",
+            "description": {
+              "content": "Pattern-specific geometry for a line variant.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Lines",
+                "GetLinePatternShape"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "lineId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "patternId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "14138c2e-6ec1-4d49-a361-03d54717cad9",
+              "name": "Pattern geometry.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Lines",
+                    "GetLinePatternShape"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lineId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "patternId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e3705e39-b73b-4d16-b775-4677aebb9f80",
+          "name": "Get Line Schedule",
+          "request": {
+            "name": "Get Line Schedule",
+            "description": {
+              "content": "Timetable for a line.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Lines",
+                "GetLineSchedule"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "lineId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f40e93d9-0308-4299-b058-7d3230e1da03",
+              "name": "Line schedule.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Lines",
+                    "GetLineSchedule"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lineId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3adae73a-efdc-43a0-bfb1-1b6a89b72578",
+          "name": "Get Line Alerts",
+          "request": {
+            "name": "Get Line Alerts",
+            "description": {
+              "content": "Service disruptions for a line.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Lines",
+                "GetLineAlerts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "lineId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "605994d2-0d02-4d1b-bb1d-3a38f67c6fcb",
+              "name": "Active alerts on the line.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Lines",
+                    "GetLineAlerts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lineId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9b19990d-f603-438a-a637-eaa0512c5a09",
+          "name": "Get Line Reviews",
+          "request": {
+            "name": "Get Line Reviews",
+            "description": {
+              "content": "User feedback for a line.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Lines",
+                "GetLineReviews"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "lineId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bf44b11a-c0ae-4d53-a550-ca623ae74840",
+              "name": "Reviews for the line.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Lines",
+                    "GetLineReviews"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lineId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "de762e62-2a97-4f0e-b544-91e29b33e7a0",
+          "name": "Get Line Full Info",
+          "request": {
+            "name": "Get Line Full Info",
+            "description": {
+              "content": "Comprehensive line data including stops, shape, schedule, and alerts.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Lines",
+                "GetLineFullInfo"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "lineId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b4381863-6d27-435b-80c1-f39198a114eb",
+              "name": "Full line data.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Lines",
+                    "GetLineFullInfo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lineId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "4df4bed8-ac05-413f-af1e-88060696df31",
+      "name": "TripPlan",
+      "description": {
+        "content": "Multimodal trip planning and itinerary details.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f9169cad-f231-4863-a51d-12307a03898d",
+          "name": "Get Suggested Routes",
+          "request": {
+            "name": "Get Suggested Routes",
+            "description": {
+              "content": "Optimal multimodal A-to-B itineraries between an origin and destination.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "TripPlan",
+                "GetSuggestedRoutes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fromLat",
+                  "value": "<double>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "fromLon",
+                  "value": "<double>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "toLat",
+                  "value": "<double>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "toLon",
+                  "value": "<double>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "time",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeType",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0ce1dffa-6ddc-4761-89d2-ec9029b75e70",
+              "name": "Suggested itineraries.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "TripPlan",
+                    "GetSuggestedRoutes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fromLat",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "fromLon",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "toLat",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "toLon",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "time",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "timeType",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5d16dd49-db54-4a0e-9fd0-b0c32b171c70",
+          "name": "Get Walking Routes",
+          "request": {
+            "name": "Get Walking Routes",
+            "description": {
+              "content": "Pedestrian-only route between two points.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "TripPlan",
+                "GetWalkingRoutes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fromLat",
+                  "value": "<double>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "fromLon",
+                  "value": "<double>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "toLat",
+                  "value": "<double>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "toLon",
+                  "value": "<double>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "197e51c1-ed5c-4e88-bc2c-5cafc3947a2c",
+              "name": "Walking routes.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "TripPlan",
+                    "GetWalkingRoutes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fromLat",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "fromLon",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "toLat",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "toLon",
+                      "value": "<double>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7cf0dab9-0b73-45e6-9e25-30d0ef924c0d",
+          "name": "Get Basic Itinerary",
+          "request": {
+            "name": "Get Basic Itinerary",
+            "description": {
+              "content": "Core route details for a previously suggested itinerary.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "TripPlan",
+                "GetBasicItinerary"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "itineraryId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "970ea542-a334-44b6-a0f9-f7fa6290c0c5",
+              "name": "Basic itinerary.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "TripPlan",
+                    "GetBasicItinerary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "itineraryId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "37b1472a-8d7b-451c-ac44-55b361383f64",
+          "name": "Get Detailed Itinerary Shape",
+          "request": {
+            "name": "Get Detailed Itinerary Shape",
+            "description": {
+              "content": "Geometry for each leg of an itinerary.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "TripPlan",
+                "GetDetailedItineraryShape"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "itineraryId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2356b07d-c982-48ce-88ec-bc01440f1022",
+              "name": "Itinerary geometry.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "TripPlan",
+                    "GetDetailedItineraryShape"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "itineraryId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "44f1cf1a-1252-4a94-8c7d-fe9c7eeda40e",
+          "name": "Get Detailed Itinerary Schedules",
+          "request": {
+            "name": "Get Detailed Itinerary Schedules",
+            "description": {
+              "content": "Timing information for each leg of an itinerary.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "TripPlan",
+                "GetDetailedItinerarySchedules"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "itineraryId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f59a1649-8730-4cbe-8ee5-35d36590592e",
+              "name": "Itinerary schedules.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "TripPlan",
+                    "GetDetailedItinerarySchedules"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "itineraryId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7bc10271-c6a2-43cf-be2d-4221d36796d0",
+          "name": "Get Detailed Itinerary",
+          "request": {
+            "name": "Get Detailed Itinerary",
+            "description": {
+              "content": "Comprehensive routing data including geometry, schedules, and alerts.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "TripPlan",
+                "GetDetailedItinerary"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "itineraryId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "15c2c09b-4b5f-477c-8d06-41658afea1f5",
+              "name": "Detailed itinerary.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "TripPlan",
+                    "GetDetailedItinerary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "itineraryId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "5683decc-eadc-4a2c-85a9-2e8d97ea8ec0",
+      "name": "RealTime",
+      "description": {
+        "content": "Live arrival predictions for stops and lines.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "33eaea23-7ad4-4f36-8621-3002d41f34e6",
+          "name": "Get Line Stop Arrivals Ex",
+          "request": {
+            "name": "Get Line Stop Arrivals Ex",
+            "description": {
+              "content": "Enhanced real-time arrival predictions for a line at a stop.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "RealTime",
+                "GetLineStopArrivalsEx"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "lineId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "stopId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0f4636a5-5251-45c5-9f76-060791b27b63",
+              "name": "Real-time arrivals.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "RealTime",
+                    "GetLineStopArrivalsEx"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lineId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "stopId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e3deebeb-531c-4c4d-9a73-5c8b67174a14",
+          "name": "Get Line Arrivals",
+          "request": {
+            "name": "Get Line Arrivals",
+            "description": {
+              "content": "Vehicle arrival times for a line.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "RealTime",
+                "GetLineArrivals"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "lineId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e2f19201-76d6-446d-8b0e-fe9af4eb6e7b",
+              "name": "Vehicle arrivals.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "RealTime",
+                    "GetLineArrivals"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lineId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "770f3347-0f23-454f-aae9-118df8e847b7",
+          "name": "Get Stop Arrivals",
+          "request": {
+            "name": "Get Stop Arrivals",
+            "description": {
+              "content": "All vehicle arrivals at a stop.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "RealTime",
+                "GetStopArrivals"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "stopId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "58a2e75f-1b49-4d84-8446-ce483e6983ff",
+              "name": "Arrivals at the stop.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "RealTime",
+                    "GetStopArrivals"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "stopId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6c0fa2c3-bf4d-4fc8-a74c-6a91ccf09dae",
+          "name": "Get Multi Stops Arrivals",
+          "request": {
+            "name": "Get Multi Stops Arrivals",
+            "description": {
+              "content": "Batch arrival query for multiple stops.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "RealTime",
+                "GetMultiStopsArrivals"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "stopIds",
+                  "value": "<string>,<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f79723e4-c238-4eba-bbd5-072b044b9de0",
+              "name": "Arrivals for the batch.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "RealTime",
+                    "GetMultiStopsArrivals"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "stopIds",
+                      "value": "<string>,<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fe040261-3409-45c2-a7d7-aa9776c31afd",
+          "name": "Get Multi Stops Arrivals With Alerts",
+          "request": {
+            "name": "Get Multi Stops Arrivals With Alerts",
+            "description": {
+              "content": "Batch arrival query with line-level alerts.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "RealTime",
+                "GetMultiStopsArrivalsWithAlerts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "stopIds",
+                  "value": "<string>,<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "484382a3-9f3b-4c88-9cdb-14b6021894f8",
+              "name": "Arrivals plus alerts.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "RealTime",
+                    "GetMultiStopsArrivalsWithAlerts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "stopIds",
+                      "value": "<string>,<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "ac23fc13-7e07-45c2-9d88-8319af02f31f",
+      "name": "ServiceAlerts",
+      "description": {
+        "content": "Metro service alerts and details.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0bf40bb7-b038-410c-9b50-f170e912ce6f",
+          "name": "Get Metro Service Alerts",
+          "request": {
+            "name": "Get Metro Service Alerts",
+            "description": {
+              "content": "All system-wide service alerts for the metro area.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "General",
+                "GetMetroServiceAlerts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0982df84-a240-444f-ad59-a76f71eecebe",
+              "name": "Metro service alerts.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "General",
+                    "GetMetroServiceAlerts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ac6e9b25-bd09-48bb-a3c4-0a5f456ffe07",
+          "name": "Get Alert Details",
+          "request": {
+            "name": "Get Alert Details",
+            "description": {
+              "content": "Detailed information for a single alert.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "General",
+                "GetAlertDetails"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "alertId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bfa40f37-a243-4f80-b45d-a6d658c60f81",
+              "name": "Alert details.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "General",
+                    "GetAlertDetails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "alertId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "92ff2a48-0fbc-4c75-80f6-4e94ef65233f",
+      "name": "General",
+      "description": {
+        "content": "Metro agencies and supported transit types.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4c6bfd4b-9070-4064-9056-5050736f62f4",
+          "name": "Get Metro Agencies",
+          "request": {
+            "name": "Get Metro Agencies",
+            "description": {
+              "content": "Transit providers operating in the metro area.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "General",
+                "GetMetroAgencies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "47d420b7-ae39-45b1-afbd-546ed0f8e3bc",
+              "name": "Agencies list.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "General",
+                    "GetMetroAgencies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "67b914b6-c64c-45b2-b3c0-1e87082c3291",
+          "name": "Get Metro Supported Transit Types",
+          "request": {
+            "name": "Get Metro Supported Transit Types",
+            "description": {
+              "content": "Available transit modes in the metro area.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "General",
+                "GetMetroSupportedTransitTypes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "37a529b2-c718-4580-8341-8628803df489",
+              "name": "Supported transit types.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "General",
+                    "GetMetroSupportedTransitTypes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "8fb065a5-caf1-4966-91c3-0d6b998f6de1",
+      "name": "GTFSRealtime",
+      "description": {
+        "content": "GTFS-RT feeds for vehicles, trip updates, and service alerts.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "48206f70-d2fe-4f96-b150-54f0517d5bb0",
+          "name": "Get GTFS Realtime Feed",
+          "request": {
+            "name": "Get GTFS Realtime Feed",
+            "description": {
+              "content": "GTFS-RT feed for vehicle positions and trip updates in the metro area.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "GTFS",
+                "RT"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/x-protobuf"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "49f99ccc-b26e-4348-ad24-433ca4d0ce61",
+              "name": "GTFS-RT protocol buffer payload.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "GTFS",
+                    "RT"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/x-protobuf"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/x-protobuf"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "57d6895e-ba15-4bc7-89c1-4202ffd54a03",
+          "name": "Get GTFS Service Alerts Feed",
+          "request": {
+            "name": "Get GTFS Service Alerts Feed",
+            "description": {
+              "content": "GTFS-RT service alerts feed for the metro area.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "GTFS",
+                "SA_RT"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/x-protobuf"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "69c8117f-cdd4-4530-b28e-22c298cbc54a",
+              "name": "GTFS-RT service alerts payload.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "GTFS",
+                    "SA_RT"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/x-protobuf"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/x-protobuf"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "12907e1e-0843-4f68-90e6-60c40176ba77",
+          "name": "Get GTFS Polygon Realtime Feed",
+          "request": {
+            "name": "Get GTFS Polygon Realtime Feed",
+            "description": {
+              "content": "GTFS-RT feed restricted to a geographic polygon.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "GTFS",
+                "Polygon_RT"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "polygon",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/x-protobuf"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "26a41489-2588-4b32-89f6-446522abcfc5",
+              "name": "GTFS-RT payload for the polygon.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "GTFS",
+                    "Polygon_RT"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "polygon",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/x-protobuf"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/x-protobuf"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "4cdf6937-4121-4671-be80-a5bf4190ba34",
+      "name": "Search",
+      "description": {
+        "content": "Search stops and lines by name or number.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "37ab26de-7c9b-4898-a3bd-5c085575bdcb",
+          "name": "Stop Search",
+          "request": {
+            "name": "Stop Search",
+            "description": {
+              "content": "Query stops by name or location.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Search",
+                "StopSearch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "011063a1-c0f3-42e1-b483-556285039efa",
+              "name": "Matching stops.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Search",
+                    "StopSearch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "11e88acb-3515-4ef0-b417-2a04e59b3da3",
+          "name": "Line Search",
+          "request": {
+            "name": "Line Search",
+            "description": {
+              "content": "Query lines by number or name.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Search",
+                "LineSearch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2f5c33e9-4b1e-4afe-992b-da43f427cabd",
+              "name": "Matching lines.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Search",
+                    "LineSearch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app5.moovitapp.com/services-app/services",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "API_KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a9d931ec-27e1-4200-bf81-03b6f45c434c",
+    "name": "Moovit Public Transit APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Moovit Public Transit APIs power multimodal trip planning, nearby transit discovery, stops and lines metadata, real-time arrival predictions, and service alerts across more than 3,500 cities in 112 countries. The APIs are tuned for short response times and are used to power Microsoft (Azure Maps), Uber, Lyft, Cubic, and city/transit-agency MaaS deployments. Authentication is HMAC-SHA256 with an API_KEY header plus an Authorization header of the form `hmacauth <signature>:<nonce>:<timestamp>`. All requests must carry a metro identifier (either a USER_LOC lat/lon pair or a MOOVIT_METRO_ID).\n\nContact Support:\n Name: Moovit API Helpdesk\n Email: helpdesk@moovit.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,732 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Moovit Public Transit APIs",
+    "version": "5.1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "API_KEY",
+      "value": "{{API_KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Nearby",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Nearby Objects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/Nearby/GetNearbyObjects",
+            "params": [
+              {
+                "name": "lat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lon",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "radius",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Locate stops, bikes, or scooters within a radius of a coordinate. Max radius 5km, max 100 objects."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Stops",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Stop Basic Info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/Stops/GetStopBasicInfo",
+            "params": [
+              {
+                "name": "stopId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Name, location, transit type, and agency for a stop."
+        },
+        {
+          "info": {
+            "name": "Get Stop Lines",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/Stops/GetStopLines",
+            "params": [
+              {
+                "name": "stopId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lines that serve a stop."
+        },
+        {
+          "info": {
+            "name": "Get Stop Reviews",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/Stops/GetStopReviews",
+            "params": [
+              {
+                "name": "stopId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "User-submitted reviews and ratings for a stop."
+        },
+        {
+          "info": {
+            "name": "Get Stop Photos",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/Stops/GetStopPhotos",
+            "params": [
+              {
+                "name": "stopId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "User-uploaded photos of a stop."
+        },
+        {
+          "info": {
+            "name": "Get Stop Details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/Stops/GetStopDetails",
+            "params": [
+              {
+                "name": "stopId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Aggregated stop information."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Lines",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Line Basic Info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/Lines/GetLineBasicInfo",
+            "params": [
+              {
+                "name": "lineId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Line number, name, color, and icon."
+        },
+        {
+          "info": {
+            "name": "Get Line Stops",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/Lines/GetLineStops",
+            "params": [
+              {
+                "name": "lineId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "All stops served by a line."
+        },
+        {
+          "info": {
+            "name": "Get Line Shape",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/Lines/GetLineShape",
+            "params": [
+              {
+                "name": "lineId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Geographic route geometry for a line."
+        },
+        {
+          "info": {
+            "name": "Get Line Pattern Shape",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/Lines/GetLinePatternShape",
+            "params": [
+              {
+                "name": "lineId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "patternId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Pattern-specific geometry for a line variant."
+        },
+        {
+          "info": {
+            "name": "Get Line Schedule",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/Lines/GetLineSchedule",
+            "params": [
+              {
+                "name": "lineId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Timetable for a line."
+        },
+        {
+          "info": {
+            "name": "Get Line Alerts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/Lines/GetLineAlerts",
+            "params": [
+              {
+                "name": "lineId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Service disruptions for a line."
+        },
+        {
+          "info": {
+            "name": "Get Line Reviews",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/Lines/GetLineReviews",
+            "params": [
+              {
+                "name": "lineId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "User feedback for a line."
+        },
+        {
+          "info": {
+            "name": "Get Line Full Info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/Lines/GetLineFullInfo",
+            "params": [
+              {
+                "name": "lineId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Comprehensive line data including stops, shape, schedule, and alerts."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "TripPlan",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Suggested Routes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/TripPlan/GetSuggestedRoutes",
+            "params": [
+              {
+                "name": "fromLat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fromLon",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "toLat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "toLon",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "time",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "timeType",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Optimal multimodal A-to-B itineraries between an origin and destination."
+        },
+        {
+          "info": {
+            "name": "Get Walking Routes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/TripPlan/GetWalkingRoutes",
+            "params": [
+              {
+                "name": "fromLat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fromLon",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "toLat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "toLon",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Pedestrian-only route between two points."
+        },
+        {
+          "info": {
+            "name": "Get Basic Itinerary",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/TripPlan/GetBasicItinerary",
+            "params": [
+              {
+                "name": "itineraryId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Core route details for a previously suggested itinerary."
+        },
+        {
+          "info": {
+            "name": "Get Detailed Itinerary Shape",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/TripPlan/GetDetailedItineraryShape",
+            "params": [
+              {
+                "name": "itineraryId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Geometry for each leg of an itinerary."
+        },
+        {
+          "info": {
+            "name": "Get Detailed Itinerary Schedules",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/TripPlan/GetDetailedItinerarySchedules",
+            "params": [
+              {
+                "name": "itineraryId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Timing information for each leg of an itinerary."
+        },
+        {
+          "info": {
+            "name": "Get Detailed Itinerary",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/TripPlan/GetDetailedItinerary",
+            "params": [
+              {
+                "name": "itineraryId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Comprehensive routing data including geometry, schedules, and alerts."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "RealTime",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Line Stop Arrivals Ex",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/RealTime/GetLineStopArrivalsEx",
+            "params": [
+              {
+                "name": "lineId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "stopId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Enhanced real-time arrival predictions for a line at a stop."
+        },
+        {
+          "info": {
+            "name": "Get Line Arrivals",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/RealTime/GetLineArrivals",
+            "params": [
+              {
+                "name": "lineId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Vehicle arrival times for a line."
+        },
+        {
+          "info": {
+            "name": "Get Stop Arrivals",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/RealTime/GetStopArrivals",
+            "params": [
+              {
+                "name": "stopId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "All vehicle arrivals at a stop."
+        },
+        {
+          "info": {
+            "name": "Get Multi Stops Arrivals",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/RealTime/GetMultiStopsArrivals",
+            "params": [
+              {
+                "name": "stopIds",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Batch arrival query for multiple stops."
+        },
+        {
+          "info": {
+            "name": "Get Multi Stops Arrivals With Alerts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/RealTime/GetMultiStopsArrivalsWithAlerts",
+            "params": [
+              {
+                "name": "stopIds",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Batch arrival query with line-level alerts."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "ServiceAlerts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Metro Service Alerts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/General/GetMetroServiceAlerts"
+          },
+          "docs": "All system-wide service alerts for the metro area."
+        },
+        {
+          "info": {
+            "name": "Get Alert Details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/General/GetAlertDetails",
+            "params": [
+              {
+                "name": "alertId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Detailed information for a single alert."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "General",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Metro Agencies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/General/GetMetroAgencies"
+          },
+          "docs": "Transit providers operating in the metro area."
+        },
+        {
+          "info": {
+            "name": "Get Metro Supported Transit Types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/General/GetMetroSupportedTransitTypes"
+          },
+          "docs": "Available transit modes in the metro area."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "GTFSRealtime",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get GTFS Realtime Feed",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/GTFS/RT"
+          },
+          "docs": "GTFS-RT feed for vehicle positions and trip updates in the metro area."
+        },
+        {
+          "info": {
+            "name": "Get GTFS Service Alerts Feed",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/GTFS/SA_RT"
+          },
+          "docs": "GTFS-RT service alerts feed for the metro area."
+        },
+        {
+          "info": {
+            "name": "Get GTFS Polygon Realtime Feed",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/GTFS/Polygon_RT",
+            "params": [
+              {
+                "name": "polygon",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "GTFS-RT feed restricted to a geographic polygon."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Search",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Stop Search",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/Search/StopSearch",
+            "params": [
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Query stops by name or location."
+        },
+        {
+          "info": {
+            "name": "Line Search",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/Search/LineSearch",
+            "params": [
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Query lines by number or name."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
