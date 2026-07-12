@@ -65,6 +65,10 @@ apis:
       - url: openapi/moovit-public-transit-api-openapi.yml
         type: OpenAPI
 common:
+  - type: DomainSecurity
+    url: security/moovit-domain-security.yml
+  - type: Authentication
+    url: authentication/moovit-authentication.yml
   - type: Website
     url: https://moovit.com
   - type: ConsumerApp

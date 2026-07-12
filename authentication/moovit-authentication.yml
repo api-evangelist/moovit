@@ -1,0 +1,24 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/moovit-public-transit-api-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: hmacAuth
+  type: apiKey
+  in: header
+  parameter: Authorization
+  description: HMAC-SHA256 signature in the form `hmacauth <signature>:<nonce>:<timestamp>`
+    over `<timestamp>:<payload>:<nonce>` using the API secret key.
+  sources:
+  - openapi/moovit-public-transit-api-openapi.yml
+- name: apiKey
+  type: apiKey
+  in: header
+  parameter: API_KEY
+  description: Public API key issued by Moovit. Required on every request.
+  sources:
+  - openapi/moovit-public-transit-api-openapi.yml
