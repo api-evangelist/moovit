@@ -65,6 +65,8 @@ apis:
       - url: openapi/moovit-public-transit-api-openapi.yml
         type: OpenAPI
 common:
+  - type: AgenticAccess
+    url: agentic-access/moovit-agentic-access.yml
   - type: DomainSecurity
     url: security/moovit-domain-security.yml
   - type: Authentication
