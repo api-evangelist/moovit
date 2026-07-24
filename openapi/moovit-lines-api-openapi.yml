@@ -1,0 +1,166 @@
+openapi: 3.0.3
+info:
+  title: Moovit Public Transit APIs General Lines API
+  description: Moovit Public Transit APIs power multimodal trip planning, nearby transit discovery, stops and lines metadata, real-time arrival predictions, and service alerts across more than 3,500 cities in 112 countries. The APIs are tuned for short response times and are used to power Microsoft (Azure Maps), Uber, Lyft, Cubic, and city/transit-agency MaaS deployments. Authentication is HMAC-SHA256 with an API_KEY header plus an Authorization header of the form `hmacauth <signature>:<nonce>:<timestamp>`. All requests must carry a metro identifier (either a USER_LOC lat/lon pair or a MOOVIT_METRO_ID).
+  version: 5.1.0.0
+  contact:
+    name: Moovit API Helpdesk
+    email: helpdesk@moovit.com
+    url: https://api-docs.moovit.com/
+  license:
+    name: Commercial
+    url: https://moovit.com/maas-solutions/transit-apis/
+servers:
+- url: https://app5.moovitapp.com/services-app/services
+  description: Production
+- url: https://api.moovitapp.com/services-app/services/EX/API
+  description: Production (MAG)
+- url: https://stg.moovitapp.com/services-app/services
+  description: Staging
+security:
+- apiKey: []
+  hmacAuth: []
+tags:
+- name: Lines
+  description: Line metadata, stops, geometry, schedules, and alerts.
+paths:
+  /Lines/GetLineBasicInfo:
+    get:
+      tags:
+      - Lines
+      summary: Get Line Basic Info
+      description: Line number, name, color, and icon.
+      parameters:
+      - in: query
+        name: lineId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Basic line info.
+  /Lines/GetLineStops:
+    get:
+      tags:
+      - Lines
+      summary: Get Line Stops
+      description: All stops served by a line.
+      parameters:
+      - in: query
+        name: lineId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Stops on the line.
+  /Lines/GetLineShape:
+    get:
+      tags:
+      - Lines
+      summary: Get Line Shape
+      description: Geographic route geometry for a line.
+      parameters:
+      - in: query
+        name: lineId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Encoded line geometry.
+  /Lines/GetLinePatternShape:
+    get:
+      tags:
+      - Lines
+      summary: Get Line Pattern Shape
+      description: Pattern-specific geometry for a line variant.
+      parameters:
+      - in: query
+        name: lineId
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: patternId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Pattern geometry.
+  /Lines/GetLineSchedule:
+    get:
+      tags:
+      - Lines
+      summary: Get Line Schedule
+      description: Timetable for a line.
+      parameters:
+      - in: query
+        name: lineId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Line schedule.
+  /Lines/GetLineAlerts:
+    get:
+      tags:
+      - Lines
+      summary: Get Line Alerts
+      description: Service disruptions for a line.
+      parameters:
+      - in: query
+        name: lineId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Active alerts on the line.
+  /Lines/GetLineReviews:
+    get:
+      tags:
+      - Lines
+      summary: Get Line Reviews
+      description: User feedback for a line.
+      parameters:
+      - in: query
+        name: lineId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Reviews for the line.
+  /Lines/GetLineFullInfo:
+    get:
+      tags:
+      - Lines
+      summary: Get Line Full Info
+      description: Comprehensive line data including stops, shape, schedule, and alerts.
+      parameters:
+      - in: query
+        name: lineId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Full line data.
+components:
+  securitySchemes:
+    hmacAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: HMAC-SHA256 signature in the form `hmacauth <signature>:<nonce>:<timestamp>` over `<timestamp>:<payload>:<nonce>` using the API secret key.
+    apiKey:
+      type: apiKey
+      in: header
+      name: API_KEY
+      description: Public API key issued by Moovit. Required on every request.
+externalDocs:
+  description: Moovit Public Transit APIs reference
+  url: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html

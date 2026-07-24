@@ -1,0 +1,116 @@
+openapi: 3.0.3
+info:
+  title: Moovit Public Transit APIs General Stops API
+  description: Moovit Public Transit APIs power multimodal trip planning, nearby transit discovery, stops and lines metadata, real-time arrival predictions, and service alerts across more than 3,500 cities in 112 countries. The APIs are tuned for short response times and are used to power Microsoft (Azure Maps), Uber, Lyft, Cubic, and city/transit-agency MaaS deployments. Authentication is HMAC-SHA256 with an API_KEY header plus an Authorization header of the form `hmacauth <signature>:<nonce>:<timestamp>`. All requests must carry a metro identifier (either a USER_LOC lat/lon pair or a MOOVIT_METRO_ID).
+  version: 5.1.0.0
+  contact:
+    name: Moovit API Helpdesk
+    email: helpdesk@moovit.com
+    url: https://api-docs.moovit.com/
+  license:
+    name: Commercial
+    url: https://moovit.com/maas-solutions/transit-apis/
+servers:
+- url: https://app5.moovitapp.com/services-app/services
+  description: Production
+- url: https://api.moovitapp.com/services-app/services/EX/API
+  description: Production (MAG)
+- url: https://stg.moovitapp.com/services-app/services
+  description: Staging
+security:
+- apiKey: []
+  hmacAuth: []
+tags:
+- name: Stops
+  description: Stop metadata, lines served, reviews, and photos.
+paths:
+  /Stops/GetStopBasicInfo:
+    get:
+      tags:
+      - Stops
+      summary: Get Stop Basic Info
+      description: Name, location, transit type, and agency for a stop.
+      parameters:
+      - in: query
+        name: stopId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Basic stop info.
+  /Stops/GetStopLines:
+    get:
+      tags:
+      - Stops
+      summary: Get Stop Lines
+      description: Lines that serve a stop.
+      parameters:
+      - in: query
+        name: stopId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Lines serving the stop.
+  /Stops/GetStopReviews:
+    get:
+      tags:
+      - Stops
+      summary: Get Stop Reviews
+      description: User-submitted reviews and ratings for a stop.
+      parameters:
+      - in: query
+        name: stopId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Reviews and ratings.
+  /Stops/GetStopPhotos:
+    get:
+      tags:
+      - Stops
+      summary: Get Stop Photos
+      description: User-uploaded photos of a stop.
+      parameters:
+      - in: query
+        name: stopId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Photos for the stop.
+  /Stops/GetStopDetails:
+    get:
+      tags:
+      - Stops
+      summary: Get Stop Details
+      description: Aggregated stop information.
+      parameters:
+      - in: query
+        name: stopId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Aggregated stop details.
+components:
+  securitySchemes:
+    hmacAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: HMAC-SHA256 signature in the form `hmacauth <signature>:<nonce>:<timestamp>` over `<timestamp>:<payload>:<nonce>` using the API secret key.
+    apiKey:
+      type: apiKey
+      in: header
+      name: API_KEY
+      description: Public API key issued by Moovit. Required on every request.
+externalDocs:
+  description: Moovit Public Transit APIs reference
+  url: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html

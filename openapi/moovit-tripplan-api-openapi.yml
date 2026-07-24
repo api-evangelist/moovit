@@ -1,0 +1,181 @@
+openapi: 3.0.3
+info:
+  title: Moovit Public Transit APIs General TripPlan API
+  description: Moovit Public Transit APIs power multimodal trip planning, nearby transit discovery, stops and lines metadata, real-time arrival predictions, and service alerts across more than 3,500 cities in 112 countries. The APIs are tuned for short response times and are used to power Microsoft (Azure Maps), Uber, Lyft, Cubic, and city/transit-agency MaaS deployments. Authentication is HMAC-SHA256 with an API_KEY header plus an Authorization header of the form `hmacauth <signature>:<nonce>:<timestamp>`. All requests must carry a metro identifier (either a USER_LOC lat/lon pair or a MOOVIT_METRO_ID).
+  version: 5.1.0.0
+  contact:
+    name: Moovit API Helpdesk
+    email: helpdesk@moovit.com
+    url: https://api-docs.moovit.com/
+  license:
+    name: Commercial
+    url: https://moovit.com/maas-solutions/transit-apis/
+servers:
+- url: https://app5.moovitapp.com/services-app/services
+  description: Production
+- url: https://api.moovitapp.com/services-app/services/EX/API
+  description: Production (MAG)
+- url: https://stg.moovitapp.com/services-app/services
+  description: Staging
+security:
+- apiKey: []
+  hmacAuth: []
+tags:
+- name: TripPlan
+  description: Multimodal trip planning and itinerary details.
+paths:
+  /TripPlan/GetSuggestedRoutes:
+    get:
+      tags:
+      - TripPlan
+      summary: Get Suggested Routes
+      description: Optimal multimodal A-to-B itineraries between an origin and destination.
+      parameters:
+      - in: query
+        name: fromLat
+        required: true
+        schema:
+          type: number
+          format: double
+      - in: query
+        name: fromLon
+        required: true
+        schema:
+          type: number
+          format: double
+      - in: query
+        name: toLat
+        required: true
+        schema:
+          type: number
+          format: double
+      - in: query
+        name: toLon
+        required: true
+        schema:
+          type: number
+          format: double
+      - in: query
+        name: time
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: timeType
+        schema:
+          type: string
+          enum:
+          - DEPART_AT
+          - ARRIVE_BY
+      responses:
+        '200':
+          description: Suggested itineraries.
+  /TripPlan/GetWalkingRoutes:
+    get:
+      tags:
+      - TripPlan
+      summary: Get Walking Routes
+      description: Pedestrian-only route between two points.
+      parameters:
+      - in: query
+        name: fromLat
+        required: true
+        schema:
+          type: number
+          format: double
+      - in: query
+        name: fromLon
+        required: true
+        schema:
+          type: number
+          format: double
+      - in: query
+        name: toLat
+        required: true
+        schema:
+          type: number
+          format: double
+      - in: query
+        name: toLon
+        required: true
+        schema:
+          type: number
+          format: double
+      responses:
+        '200':
+          description: Walking routes.
+  /TripPlan/GetBasicItinerary:
+    get:
+      tags:
+      - TripPlan
+      summary: Get Basic Itinerary
+      description: Core route details for a previously suggested itinerary.
+      parameters:
+      - in: query
+        name: itineraryId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Basic itinerary.
+  /TripPlan/GetDetailedItineraryShape:
+    get:
+      tags:
+      - TripPlan
+      summary: Get Detailed Itinerary Shape
+      description: Geometry for each leg of an itinerary.
+      parameters:
+      - in: query
+        name: itineraryId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Itinerary geometry.
+  /TripPlan/GetDetailedItinerarySchedules:
+    get:
+      tags:
+      - TripPlan
+      summary: Get Detailed Itinerary Schedules
+      description: Timing information for each leg of an itinerary.
+      parameters:
+      - in: query
+        name: itineraryId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Itinerary schedules.
+  /TripPlan/GetDetailedItinerary:
+    get:
+      tags:
+      - TripPlan
+      summary: Get Detailed Itinerary
+      description: Comprehensive routing data including geometry, schedules, and alerts.
+      parameters:
+      - in: query
+        name: itineraryId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Detailed itinerary.
+components:
+  securitySchemes:
+    hmacAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: HMAC-SHA256 signature in the form `hmacauth <signature>:<nonce>:<timestamp>` over `<timestamp>:<payload>:<nonce>` using the API secret key.
+    apiKey:
+      type: apiKey
+      in: header
+      name: API_KEY
+      description: Public API key issued by Moovit. Required on every request.
+externalDocs:
+  description: Moovit Public Transit APIs reference
+  url: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
