@@ -17,9 +17,21 @@ description: >-
   there is no self-service developer signup — credentials are issued by
   helpdesk@moovit.com.
 type: Index
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Provider
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/moovit.png
 tags:
   - Transit
   - Public Transit
@@ -41,29 +53,132 @@ created: '2026-05-25'
 modified: '2026-05-25'
 specificationVersion: '0.20'
 apis:
-  - aid: moovit:moovit-public-transit-api
-    name: Moovit Public Transit API
-    description: >-
-      The Moovit Public Transit API suite — a thin, volume-metered HTTP API
-      for multimodal trip planning, nearby transit discovery, stops and
-      lines metadata, real-time arrival predictions, service alerts, and
-      GTFS-Realtime feeds. Auth is HMAC-SHA256 over `<timestamp>:<payload>:
-      <nonce>` with an API_KEY header and a USER_LOC or MOOVIT_METRO_ID
-      header that scopes the request to a metro area.
-    humanURL: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
-    baseURL: https://app5.moovitapp.com/services-app/services/
-    tags:
-      - Transit
-      - Trip Planning
-      - Real Time
-      - GTFS
-    properties:
-      - url: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
-        type: Documentation
-      - url: https://moovit.com/maas-solutions/transit-apis/
-        type: Documentation
-      - url: openapi/moovit-public-transit-api-openapi.yml
-        type: OpenAPI
+- aid: moovit:moovit-general-api
+  name: Moovit General API
+  description: Metro agencies and supported transit types.
+  humanURL: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
+  baseURL: https://app5.moovitapp.com/services-app/services/
+  tags:
+  - General
+  properties:
+  - type: OpenAPI
+    url: openapi/moovit-general-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
+  - type: Documentation
+    url: https://moovit.com/maas-solutions/transit-apis/
+- aid: moovit:moovit-gtfsrealtime-api
+  name: Moovit GTFSRealtime API
+  description: GTFS-RT feeds for vehicles, trip updates, and service alerts.
+  humanURL: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
+  baseURL: https://app5.moovitapp.com/services-app/services/
+  tags:
+  - GTFSRealtime
+  properties:
+  - type: OpenAPI
+    url: openapi/moovit-gtfsrealtime-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
+  - type: Documentation
+    url: https://moovit.com/maas-solutions/transit-apis/
+- aid: moovit:moovit-lines-api
+  name: Moovit Lines API
+  description: Line metadata, stops, geometry, schedules, and alerts.
+  humanURL: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
+  baseURL: https://app5.moovitapp.com/services-app/services/
+  tags:
+  - Lines
+  properties:
+  - type: OpenAPI
+    url: openapi/moovit-lines-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
+  - type: Documentation
+    url: https://moovit.com/maas-solutions/transit-apis/
+- aid: moovit:moovit-nearby-api
+  name: Moovit Nearby API
+  description: Locate stops, bikes, and scooters near a coordinate.
+  humanURL: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
+  baseURL: https://app5.moovitapp.com/services-app/services/
+  tags:
+  - Nearby
+  properties:
+  - type: OpenAPI
+    url: openapi/moovit-nearby-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
+  - type: Documentation
+    url: https://moovit.com/maas-solutions/transit-apis/
+- aid: moovit:moovit-realtime-api
+  name: Moovit RealTime API
+  description: Live arrival predictions for stops and lines.
+  humanURL: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
+  baseURL: https://app5.moovitapp.com/services-app/services/
+  tags:
+  - RealTime
+  properties:
+  - type: OpenAPI
+    url: openapi/moovit-realtime-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
+  - type: Documentation
+    url: https://moovit.com/maas-solutions/transit-apis/
+- aid: moovit:moovit-search-api
+  name: Moovit Search API
+  description: Search stops and lines by name or number.
+  humanURL: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
+  baseURL: https://app5.moovitapp.com/services-app/services/
+  tags:
+  - Search
+  properties:
+  - type: OpenAPI
+    url: openapi/moovit-search-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
+  - type: Documentation
+    url: https://moovit.com/maas-solutions/transit-apis/
+- aid: moovit:moovit-servicealerts-api
+  name: Moovit ServiceAlerts API
+  description: Metro service alerts and details.
+  humanURL: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
+  baseURL: https://app5.moovitapp.com/services-app/services/
+  tags:
+  - ServiceAlerts
+  properties:
+  - type: OpenAPI
+    url: openapi/moovit-servicealerts-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
+  - type: Documentation
+    url: https://moovit.com/maas-solutions/transit-apis/
+- aid: moovit:moovit-stops-api
+  name: Moovit Stops API
+  description: Stop metadata, lines served, reviews, and photos.
+  humanURL: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
+  baseURL: https://app5.moovitapp.com/services-app/services/
+  tags:
+  - Stops
+  properties:
+  - type: OpenAPI
+    url: openapi/moovit-stops-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
+  - type: Documentation
+    url: https://moovit.com/maas-solutions/transit-apis/
+- aid: moovit:moovit-tripplan-api
+  name: Moovit TripPlan API
+  description: Multimodal trip planning and itinerary details.
+  humanURL: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
+  baseURL: https://app5.moovitapp.com/services-app/services/
+  tags:
+  - TripPlan
+  properties:
+  - type: OpenAPI
+    url: openapi/moovit-tripplan-api-openapi.yml
+  - type: Documentation
+    url: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
+  - type: Documentation
+    url: https://moovit.com/maas-solutions/transit-apis/
 common:
   - type: AgenticAccess
     url: agentic-access/moovit-agentic-access.yml
