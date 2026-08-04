@@ -1,0 +1,30 @@
+{
+  "provider": "moovit",
+  "sources": [
+    "moovit-general-api-openapi.yml",
+    "moovit-gtfsrealtime-api-openapi.yml",
+    "moovit-lines-api-openapi.yml",
+    "moovit-nearby-api-openapi.yml",
+    "moovit-realtime-api-openapi.yml",
+    "moovit-search-api-openapi.yml",
+    "moovit-servicealerts-api-openapi.yml",
+    "moovit-stops-api-openapi.yml",
+    "moovit-tripplan-api-openapi.yml"
+  ],
+  "outputs": [
+    "moovit-general-api-openapi.yml",
+    "moovit-gtfsrealtime-api-openapi.yml",
+    "moovit-lines-api-openapi.yml",
+    "moovit-nearby-api-openapi.yml",
+    "moovit-realtime-api-openapi.yml",
+    "moovit-search-api-openapi.yml",
+    "moovit-servicealerts-api-openapi.yml",
+    "moovit-stops-api-openapi.yml",
+    "moovit-tripplan-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

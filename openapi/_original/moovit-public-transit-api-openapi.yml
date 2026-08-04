@@ -1,0 +1,527 @@
+openapi: 3.0.3
+info:
+  title: Moovit Public Transit APIs
+  description: >-
+    Moovit Public Transit APIs power multimodal trip planning, nearby transit
+    discovery, stops and lines metadata, real-time arrival predictions, and
+    service alerts across more than 3,500 cities in 112 countries. The APIs
+    are tuned for short response times and are used to power Microsoft (Azure
+    Maps), Uber, Lyft, Cubic, and city/transit-agency MaaS deployments.
+    Authentication is HMAC-SHA256 with an API_KEY header plus an Authorization
+    header of the form `hmacauth <signature>:<nonce>:<timestamp>`. All requests
+    must carry a metro identifier (either a USER_LOC lat/lon pair or a
+    MOOVIT_METRO_ID).
+  version: 5.1.0.0
+  contact:
+    name: Moovit API Helpdesk
+    email: helpdesk@moovit.com
+    url: https://api-docs.moovit.com/
+  license:
+    name: Commercial
+    url: https://moovit.com/maas-solutions/transit-apis/
+servers:
+  - url: https://app5.moovitapp.com/services-app/services
+    description: Production
+  - url: https://api.moovitapp.com/services-app/services/EX/API
+    description: Production (MAG)
+  - url: https://stg.moovitapp.com/services-app/services
+    description: Staging
+tags:
+  - name: Nearby
+    description: Locate stops, bikes, and scooters near a coordinate.
+  - name: Stops
+    description: Stop metadata, lines served, reviews, and photos.
+  - name: Lines
+    description: Line metadata, stops, geometry, schedules, and alerts.
+  - name: TripPlan
+    description: Multimodal trip planning and itinerary details.
+  - name: RealTime
+    description: Live arrival predictions for stops and lines.
+  - name: ServiceAlerts
+    description: Metro service alerts and details.
+  - name: General
+    description: Metro agencies and supported transit types.
+  - name: GTFSRealtime
+    description: GTFS-RT feeds for vehicles, trip updates, and service alerts.
+  - name: Search
+    description: Search stops and lines by name or number.
+paths:
+  /Nearby/GetNearbyObjects:
+    get:
+      tags: [Nearby]
+      summary: Get Nearby Objects
+      description: Locate stops, bikes, or scooters within a radius of a coordinate. Max radius 5km, max 100 objects.
+      parameters:
+        - in: query
+          name: lat
+          required: true
+          schema: { type: number, format: double }
+        - in: query
+          name: lon
+          required: true
+          schema: { type: number, format: double }
+        - in: query
+          name: radius
+          schema: { type: integer, default: 500, maximum: 5000 }
+        - in: query
+          name: limit
+          schema: { type: integer, default: 50, maximum: 100 }
+      responses:
+        '200':
+          description: List of nearby transit objects.
+  /Stops/GetStopBasicInfo:
+    get:
+      tags: [Stops]
+      summary: Get Stop Basic Info
+      description: Name, location, transit type, and agency for a stop.
+      parameters:
+        - in: query
+          name: stopId
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Basic stop info. }
+  /Stops/GetStopLines:
+    get:
+      tags: [Stops]
+      summary: Get Stop Lines
+      description: Lines that serve a stop.
+      parameters:
+        - in: query
+          name: stopId
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Lines serving the stop. }
+  /Stops/GetStopReviews:
+    get:
+      tags: [Stops]
+      summary: Get Stop Reviews
+      description: User-submitted reviews and ratings for a stop.
+      parameters:
+        - in: query
+          name: stopId
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Reviews and ratings. }
+  /Stops/GetStopPhotos:
+    get:
+      tags: [Stops]
+      summary: Get Stop Photos
+      description: User-uploaded photos of a stop.
+      parameters:
+        - in: query
+          name: stopId
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Photos for the stop. }
+  /Stops/GetStopDetails:
+    get:
+      tags: [Stops]
+      summary: Get Stop Details
+      description: Aggregated stop information.
+      parameters:
+        - in: query
+          name: stopId
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Aggregated stop details. }
+  /Lines/GetLineBasicInfo:
+    get:
+      tags: [Lines]
+      summary: Get Line Basic Info
+      description: Line number, name, color, and icon.
+      parameters:
+        - in: query
+          name: lineId
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Basic line info. }
+  /Lines/GetLineStops:
+    get:
+      tags: [Lines]
+      summary: Get Line Stops
+      description: All stops served by a line.
+      parameters:
+        - in: query
+          name: lineId
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Stops on the line. }
+  /Lines/GetLineShape:
+    get:
+      tags: [Lines]
+      summary: Get Line Shape
+      description: Geographic route geometry for a line.
+      parameters:
+        - in: query
+          name: lineId
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Encoded line geometry. }
+  /Lines/GetLinePatternShape:
+    get:
+      tags: [Lines]
+      summary: Get Line Pattern Shape
+      description: Pattern-specific geometry for a line variant.
+      parameters:
+        - in: query
+          name: lineId
+          required: true
+          schema: { type: string }
+        - in: query
+          name: patternId
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Pattern geometry. }
+  /Lines/GetLineSchedule:
+    get:
+      tags: [Lines]
+      summary: Get Line Schedule
+      description: Timetable for a line.
+      parameters:
+        - in: query
+          name: lineId
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Line schedule. }
+  /Lines/GetLineAlerts:
+    get:
+      tags: [Lines]
+      summary: Get Line Alerts
+      description: Service disruptions for a line.
+      parameters:
+        - in: query
+          name: lineId
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Active alerts on the line. }
+  /Lines/GetLineReviews:
+    get:
+      tags: [Lines]
+      summary: Get Line Reviews
+      description: User feedback for a line.
+      parameters:
+        - in: query
+          name: lineId
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Reviews for the line. }
+  /Lines/GetLineFullInfo:
+    get:
+      tags: [Lines]
+      summary: Get Line Full Info
+      description: Comprehensive line data including stops, shape, schedule, and alerts.
+      parameters:
+        - in: query
+          name: lineId
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Full line data. }
+  /TripPlan/GetSuggestedRoutes:
+    get:
+      tags: [TripPlan]
+      summary: Get Suggested Routes
+      description: Optimal multimodal A-to-B itineraries between an origin and destination.
+      parameters:
+        - in: query
+          name: fromLat
+          required: true
+          schema: { type: number, format: double }
+        - in: query
+          name: fromLon
+          required: true
+          schema: { type: number, format: double }
+        - in: query
+          name: toLat
+          required: true
+          schema: { type: number, format: double }
+        - in: query
+          name: toLon
+          required: true
+          schema: { type: number, format: double }
+        - in: query
+          name: time
+          schema: { type: string, format: date-time }
+        - in: query
+          name: timeType
+          schema: { type: string, enum: [DEPART_AT, ARRIVE_BY] }
+      responses:
+        '200': { description: Suggested itineraries. }
+  /TripPlan/GetWalkingRoutes:
+    get:
+      tags: [TripPlan]
+      summary: Get Walking Routes
+      description: Pedestrian-only route between two points.
+      parameters:
+        - in: query
+          name: fromLat
+          required: true
+          schema: { type: number, format: double }
+        - in: query
+          name: fromLon
+          required: true
+          schema: { type: number, format: double }
+        - in: query
+          name: toLat
+          required: true
+          schema: { type: number, format: double }
+        - in: query
+          name: toLon
+          required: true
+          schema: { type: number, format: double }
+      responses:
+        '200': { description: Walking routes. }
+  /TripPlan/GetBasicItinerary:
+    get:
+      tags: [TripPlan]
+      summary: Get Basic Itinerary
+      description: Core route details for a previously suggested itinerary.
+      parameters:
+        - in: query
+          name: itineraryId
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Basic itinerary. }
+  /TripPlan/GetDetailedItineraryShape:
+    get:
+      tags: [TripPlan]
+      summary: Get Detailed Itinerary Shape
+      description: Geometry for each leg of an itinerary.
+      parameters:
+        - in: query
+          name: itineraryId
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Itinerary geometry. }
+  /TripPlan/GetDetailedItinerarySchedules:
+    get:
+      tags: [TripPlan]
+      summary: Get Detailed Itinerary Schedules
+      description: Timing information for each leg of an itinerary.
+      parameters:
+        - in: query
+          name: itineraryId
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Itinerary schedules. }
+  /TripPlan/GetDetailedItinerary:
+    get:
+      tags: [TripPlan]
+      summary: Get Detailed Itinerary
+      description: Comprehensive routing data including geometry, schedules, and alerts.
+      parameters:
+        - in: query
+          name: itineraryId
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Detailed itinerary. }
+  /RealTime/GetLineStopArrivalsEx:
+    get:
+      tags: [RealTime]
+      summary: Get Line Stop Arrivals Ex
+      description: Enhanced real-time arrival predictions for a line at a stop.
+      parameters:
+        - in: query
+          name: lineId
+          required: true
+          schema: { type: string }
+        - in: query
+          name: stopId
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Real-time arrivals. }
+  /RealTime/GetLineArrivals:
+    get:
+      tags: [RealTime]
+      summary: Get Line Arrivals
+      description: Vehicle arrival times for a line.
+      parameters:
+        - in: query
+          name: lineId
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Vehicle arrivals. }
+  /RealTime/GetStopArrivals:
+    get:
+      tags: [RealTime]
+      summary: Get Stop Arrivals
+      description: All vehicle arrivals at a stop.
+      parameters:
+        - in: query
+          name: stopId
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Arrivals at the stop. }
+  /RealTime/GetMultiStopsArrivals:
+    get:
+      tags: [RealTime]
+      summary: Get Multi Stops Arrivals
+      description: Batch arrival query for multiple stops.
+      parameters:
+        - in: query
+          name: stopIds
+          required: true
+          schema: { type: array, items: { type: string } }
+          style: form
+          explode: false
+      responses:
+        '200': { description: Arrivals for the batch. }
+  /RealTime/GetMultiStopsArrivalsWithAlerts:
+    get:
+      tags: [RealTime]
+      summary: Get Multi Stops Arrivals With Alerts
+      description: Batch arrival query with line-level alerts.
+      parameters:
+        - in: query
+          name: stopIds
+          required: true
+          schema: { type: array, items: { type: string } }
+          style: form
+          explode: false
+      responses:
+        '200': { description: Arrivals plus alerts. }
+  /General/GetMetroServiceAlerts:
+    get:
+      tags: [ServiceAlerts]
+      summary: Get Metro Service Alerts
+      description: All system-wide service alerts for the metro area.
+      responses:
+        '200': { description: Metro service alerts. }
+  /General/GetAlertDetails:
+    get:
+      tags: [ServiceAlerts]
+      summary: Get Alert Details
+      description: Detailed information for a single alert.
+      parameters:
+        - in: query
+          name: alertId
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Alert details. }
+  /General/GetMetroAgencies:
+    get:
+      tags: [General]
+      summary: Get Metro Agencies
+      description: Transit providers operating in the metro area.
+      responses:
+        '200': { description: Agencies list. }
+  /General/GetMetroSupportedTransitTypes:
+    get:
+      tags: [General]
+      summary: Get Metro Supported Transit Types
+      description: Available transit modes in the metro area.
+      responses:
+        '200': { description: Supported transit types. }
+  /GTFS/RT:
+    get:
+      tags: [GTFSRealtime]
+      summary: Get GTFS Realtime Feed
+      description: GTFS-RT feed for vehicle positions and trip updates in the metro area.
+      responses:
+        '200':
+          description: GTFS-RT protocol buffer payload.
+          content:
+            application/x-protobuf: {}
+  /GTFS/SA_RT:
+    get:
+      tags: [GTFSRealtime]
+      summary: Get GTFS Service Alerts Feed
+      description: GTFS-RT service alerts feed for the metro area.
+      responses:
+        '200':
+          description: GTFS-RT service alerts payload.
+          content:
+            application/x-protobuf: {}
+  /GTFS/Polygon_RT:
+    get:
+      tags: [GTFSRealtime]
+      summary: Get GTFS Polygon Realtime Feed
+      description: GTFS-RT feed restricted to a geographic polygon.
+      parameters:
+        - in: query
+          name: polygon
+          required: true
+          schema: { type: string, description: 'WKT polygon definition' }
+      responses:
+        '200':
+          description: GTFS-RT payload for the polygon.
+          content:
+            application/x-protobuf: {}
+  /Search/StopSearch:
+    get:
+      tags: [Search]
+      summary: Stop Search
+      description: Query stops by name or location.
+      parameters:
+        - in: query
+          name: q
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Matching stops. }
+  /Search/LineSearch:
+    get:
+      tags: [Search]
+      summary: Line Search
+      description: Query lines by number or name.
+      parameters:
+        - in: query
+          name: q
+          required: true
+          schema: { type: string }
+      responses:
+        '200': { description: Matching lines. }
+components:
+  securitySchemes:
+    hmacAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: HMAC-SHA256 signature in the form `hmacauth <signature>:<nonce>:<timestamp>` over `<timestamp>:<payload>:<nonce>` using the API secret key.
+    apiKey:
+      type: apiKey
+      in: header
+      name: API_KEY
+      description: Public API key issued by Moovit. Required on every request.
+  parameters:
+    UserLocation:
+      in: header
+      name: USER_LOC
+      schema: { type: string, example: '(40.7128, -74.0060)' }
+      description: User location as `(lat, lon)`. Required if MOOVIT_METRO_ID is not provided.
+    MetroId:
+      in: header
+      name: MOOVIT_METRO_ID
+      schema: { type: string }
+      description: Moovit metro area identifier. Required if USER_LOC is not provided.
+    ProtocolVersion:
+      in: header
+      name: MOOVIT_PROTOCOL_VERSION
+      schema: { type: string, default: '5.1.0.0' }
+      description: Moovit protocol version. Optional.
+security:
+  - apiKey: []
+    hmacAuth: []
+externalDocs:
+  description: Moovit Public Transit APIs reference
+  url: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
