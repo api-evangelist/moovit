@@ -1,0 +1,159 @@
+{
+  "item": [
+    {
+      "id": "862c481b-b450-4648-b1da-b0a720a4248c",
+      "name": "Nearby",
+      "description": {
+        "content": "Locate stops, bikes, and scooters near a coordinate.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "351cf878-fd9c-4932-8250-49ce924afe58",
+          "name": "Get Nearby Objects",
+          "request": {
+            "name": "Get Nearby Objects",
+            "description": {
+              "content": "Locate stops, bikes, or scooters within a radius of a coordinate. Max radius 5km, max 100 objects.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Nearby",
+                "GetNearbyObjects"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "lat",
+                  "value": "<double>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "lon",
+                  "value": "<double>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "radius",
+                  "value": "500"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "50"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "552c9adf-72bb-4a84-9065-439f205eb2c3",
+              "name": "List of nearby transit objects.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Nearby",
+                    "GetNearbyObjects"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lat",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "lon",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "radius",
+                      "value": "500"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app5.moovitapp.com/services-app/services",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "API_KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "11a1710a-b025-4e8c-8a32-8ef1377a498c",
+    "name": "Moovit Public Transit APIs General Nearby API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Moovit Public Transit APIs power multimodal trip planning, nearby transit discovery, stops and lines metadata, real-time arrival predictions, and service alerts across more than 3,500 cities in 112 countries. The APIs are tuned for short response times and are used to power Microsoft (Azure Maps), Uber, Lyft, Cubic, and city/transit-agency MaaS deployments. Authentication is HMAC-SHA256 with an API_KEY header plus an Authorization header of the form `hmacauth <signature>:<nonce>:<timestamp>`. All requests must carry a metro identifier (either a USER_LOC lat/lon pair or a MOOVIT_METRO_ID).\n\nContact Support:\n Name: Moovit API Helpdesk\n Email: helpdesk@moovit.com",
+      "type": "text/plain"
+    }
+  }
+}

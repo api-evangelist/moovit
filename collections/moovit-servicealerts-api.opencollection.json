@@ -1,0 +1,55 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Moovit Public Transit APIs General ServiceAlerts API",
+    "version": "5.1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "API_KEY",
+      "value": "{{API_KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ServiceAlerts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Metro Service Alerts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/General/GetMetroServiceAlerts"
+          },
+          "docs": "All system-wide service alerts for the metro area."
+        },
+        {
+          "info": {
+            "name": "Get Alert Details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/General/GetAlertDetails",
+            "params": [
+              {
+                "name": "alertId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Detailed information for a single alert."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

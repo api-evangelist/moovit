@@ -1,0 +1,619 @@
+{
+  "item": [
+    {
+      "id": "803cdd08-8c4e-430c-8971-f0cd9e022e37",
+      "name": "TripPlan",
+      "description": {
+        "content": "Multimodal trip planning and itinerary details.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "31fb80c7-204e-42a7-9aee-400a1810adf2",
+          "name": "Get Suggested Routes",
+          "request": {
+            "name": "Get Suggested Routes",
+            "description": {
+              "content": "Optimal multimodal A-to-B itineraries between an origin and destination.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "TripPlan",
+                "GetSuggestedRoutes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fromLat",
+                  "value": "<double>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "fromLon",
+                  "value": "<double>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "toLat",
+                  "value": "<double>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "toLon",
+                  "value": "<double>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "time",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeType",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "94f34231-1dc7-4d5e-9d1c-8f9e9f678ba7",
+              "name": "Suggested itineraries.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "TripPlan",
+                    "GetSuggestedRoutes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fromLat",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "fromLon",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "toLat",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "toLon",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "time",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "timeType",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "05c03746-a656-4b3f-b001-124bf55d614d",
+          "name": "Get Walking Routes",
+          "request": {
+            "name": "Get Walking Routes",
+            "description": {
+              "content": "Pedestrian-only route between two points.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "TripPlan",
+                "GetWalkingRoutes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fromLat",
+                  "value": "<double>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "fromLon",
+                  "value": "<double>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "toLat",
+                  "value": "<double>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "toLon",
+                  "value": "<double>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2173a78b-c108-48a8-87b2-697ffad9de36",
+              "name": "Walking routes.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "TripPlan",
+                    "GetWalkingRoutes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fromLat",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "fromLon",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "toLat",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "toLon",
+                      "value": "<double>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7dd06ce3-c092-4fe1-b005-b1049bab4c55",
+          "name": "Get Basic Itinerary",
+          "request": {
+            "name": "Get Basic Itinerary",
+            "description": {
+              "content": "Core route details for a previously suggested itinerary.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "TripPlan",
+                "GetBasicItinerary"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "itineraryId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a8450558-2160-4e98-8e2a-882b42fef279",
+              "name": "Basic itinerary.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "TripPlan",
+                    "GetBasicItinerary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "itineraryId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "53395347-8fb8-422f-833b-6762dba03b8c",
+          "name": "Get Detailed Itinerary Shape",
+          "request": {
+            "name": "Get Detailed Itinerary Shape",
+            "description": {
+              "content": "Geometry for each leg of an itinerary.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "TripPlan",
+                "GetDetailedItineraryShape"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "itineraryId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ea2d8a77-22d4-41fe-a6f9-117a85175e01",
+              "name": "Itinerary geometry.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "TripPlan",
+                    "GetDetailedItineraryShape"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "itineraryId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3b8caacd-4de0-4a40-8671-5a9fb0730d71",
+          "name": "Get Detailed Itinerary Schedules",
+          "request": {
+            "name": "Get Detailed Itinerary Schedules",
+            "description": {
+              "content": "Timing information for each leg of an itinerary.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "TripPlan",
+                "GetDetailedItinerarySchedules"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "itineraryId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "272efb27-58c0-4ef1-b835-d140d8255ed9",
+              "name": "Itinerary schedules.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "TripPlan",
+                    "GetDetailedItinerarySchedules"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "itineraryId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6828a664-2a0f-4a3e-941f-39903ec6387c",
+          "name": "Get Detailed Itinerary",
+          "request": {
+            "name": "Get Detailed Itinerary",
+            "description": {
+              "content": "Comprehensive routing data including geometry, schedules, and alerts.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "TripPlan",
+                "GetDetailedItinerary"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "itineraryId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f7ea495a-afcb-4824-ad47-955e5c67b29c",
+              "name": "Detailed itinerary.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "TripPlan",
+                    "GetDetailedItinerary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "itineraryId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app5.moovitapp.com/services-app/services",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "API_KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a3d98c95-d705-4aea-a960-c22188cdbbf0",
+    "name": "Moovit Public Transit APIs General TripPlan API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Moovit Public Transit APIs power multimodal trip planning, nearby transit discovery, stops and lines metadata, real-time arrival predictions, and service alerts across more than 3,500 cities in 112 countries. The APIs are tuned for short response times and are used to power Microsoft (Azure Maps), Uber, Lyft, Cubic, and city/transit-agency MaaS deployments. Authentication is HMAC-SHA256 with an API_KEY header plus an Authorization header of the form `hmacauth <signature>:<nonce>:<timestamp>`. All requests must carry a metro identifier (either a USER_LOC lat/lon pair or a MOOVIT_METRO_ID).\n\nContact Support:\n Name: Moovit API Helpdesk\n Email: helpdesk@moovit.com",
+      "type": "text/plain"
+    }
+  }
+}

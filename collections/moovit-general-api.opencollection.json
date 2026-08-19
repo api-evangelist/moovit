@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Moovit Public Transit APIs General API",
+    "version": "5.1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "API_KEY",
+      "value": "{{API_KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "General",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Metro Agencies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/General/GetMetroAgencies"
+          },
+          "docs": "Transit providers operating in the metro area."
+        },
+        {
+          "info": {
+            "name": "Get Metro Supported Transit Types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/General/GetMetroSupportedTransitTypes"
+          },
+          "docs": "Available transit modes in the metro area."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

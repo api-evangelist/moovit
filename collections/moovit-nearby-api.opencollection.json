@@ -1,0 +1,59 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Moovit Public Transit APIs General Nearby API",
+    "version": "5.1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "API_KEY",
+      "value": "{{API_KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Nearby",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Nearby Objects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/Nearby/GetNearbyObjects",
+            "params": [
+              {
+                "name": "lat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "lon",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "radius",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Locate stops, bikes, or scooters within a radius of a coordinate. Max radius 5km, max 100 objects."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

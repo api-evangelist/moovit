@@ -1,0 +1,66 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Moovit Public Transit APIs General GTFSRealtime API",
+    "version": "5.1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "API_KEY",
+      "value": "{{API_KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "GTFSRealtime",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get GTFS Realtime Feed",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/GTFS/RT"
+          },
+          "docs": "GTFS-RT feed for vehicle positions and trip updates in the metro area."
+        },
+        {
+          "info": {
+            "name": "Get GTFS Service Alerts Feed",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/GTFS/SA_RT"
+          },
+          "docs": "GTFS-RT service alerts feed for the metro area."
+        },
+        {
+          "info": {
+            "name": "Get GTFS Polygon Realtime Feed",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/GTFS/Polygon_RT",
+            "params": [
+              {
+                "name": "polygon",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "GTFS-RT feed restricted to a geographic polygon."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

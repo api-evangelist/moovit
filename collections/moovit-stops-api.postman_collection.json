@@ -1,0 +1,459 @@
+{
+  "item": [
+    {
+      "id": "9d813179-378f-4ed3-a876-96f03bd02336",
+      "name": "Stops",
+      "description": {
+        "content": "Stop metadata, lines served, reviews, and photos.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "10ce4043-bbac-4290-bd44-44dd264061c4",
+          "name": "Get Stop Basic Info",
+          "request": {
+            "name": "Get Stop Basic Info",
+            "description": {
+              "content": "Name, location, transit type, and agency for a stop.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Stops",
+                "GetStopBasicInfo"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "stopId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "73f12ab2-d5a5-4a1c-9c5d-0f08c06abb27",
+              "name": "Basic stop info.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Stops",
+                    "GetStopBasicInfo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "stopId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8feafffa-7e23-463b-a525-5eea8399727d",
+          "name": "Get Stop Lines",
+          "request": {
+            "name": "Get Stop Lines",
+            "description": {
+              "content": "Lines that serve a stop.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Stops",
+                "GetStopLines"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "stopId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "88154edc-1a4e-437a-95ce-8d024a26410d",
+              "name": "Lines serving the stop.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Stops",
+                    "GetStopLines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "stopId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b482d068-d09c-4876-8918-f24edc7e45ae",
+          "name": "Get Stop Reviews",
+          "request": {
+            "name": "Get Stop Reviews",
+            "description": {
+              "content": "User-submitted reviews and ratings for a stop.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Stops",
+                "GetStopReviews"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "stopId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2a019be0-5335-44a6-a59c-9599b99f627b",
+              "name": "Reviews and ratings.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Stops",
+                    "GetStopReviews"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "stopId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "278008f8-0166-4189-b669-d68508074bd4",
+          "name": "Get Stop Photos",
+          "request": {
+            "name": "Get Stop Photos",
+            "description": {
+              "content": "User-uploaded photos of a stop.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Stops",
+                "GetStopPhotos"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "stopId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cbb2cded-5bda-4c0f-a6e0-0adec6fd596a",
+              "name": "Photos for the stop.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Stops",
+                    "GetStopPhotos"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "stopId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2315acc5-0430-4fbd-9170-c18778ef19fa",
+          "name": "Get Stop Details",
+          "request": {
+            "name": "Get Stop Details",
+            "description": {
+              "content": "Aggregated stop information.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "Stops",
+                "GetStopDetails"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "stopId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4f4a646f-f39d-4095-b2ad-c64218b90117",
+              "name": "Aggregated stop details.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "Stops",
+                    "GetStopDetails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "stopId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app5.moovitapp.com/services-app/services",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "API_KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "559dbc06-5582-43bd-bda5-0f760d67e010",
+    "name": "Moovit Public Transit APIs General Stops API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Moovit Public Transit APIs power multimodal trip planning, nearby transit discovery, stops and lines metadata, real-time arrival predictions, and service alerts across more than 3,500 cities in 112 countries. The APIs are tuned for short response times and are used to power Microsoft (Azure Maps), Uber, Lyft, Cubic, and city/transit-agency MaaS deployments. Authentication is HMAC-SHA256 with an API_KEY header plus an Authorization header of the form `hmacauth <signature>:<nonce>:<timestamp>`. All requests must carry a metro identifier (either a USER_LOC lat/lon pair or a MOOVIT_METRO_ID).\n\nContact Support:\n Name: Moovit API Helpdesk\n Email: helpdesk@moovit.com",
+      "type": "text/plain"
+    }
+  }
+}

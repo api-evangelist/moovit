@@ -1,0 +1,121 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Moovit Public Transit APIs General RealTime API",
+    "version": "5.1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "API_KEY",
+      "value": "{{API_KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "RealTime",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Line Stop Arrivals Ex",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/RealTime/GetLineStopArrivalsEx",
+            "params": [
+              {
+                "name": "lineId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "stopId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Enhanced real-time arrival predictions for a line at a stop."
+        },
+        {
+          "info": {
+            "name": "Get Line Arrivals",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/RealTime/GetLineArrivals",
+            "params": [
+              {
+                "name": "lineId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Vehicle arrival times for a line."
+        },
+        {
+          "info": {
+            "name": "Get Stop Arrivals",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/RealTime/GetStopArrivals",
+            "params": [
+              {
+                "name": "stopId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "All vehicle arrivals at a stop."
+        },
+        {
+          "info": {
+            "name": "Get Multi Stops Arrivals",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/RealTime/GetMultiStopsArrivals",
+            "params": [
+              {
+                "name": "stopIds",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Batch arrival query for multiple stops."
+        },
+        {
+          "info": {
+            "name": "Get Multi Stops Arrivals With Alerts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/RealTime/GetMultiStopsArrivalsWithAlerts",
+            "params": [
+              {
+                "name": "stopIds",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Batch arrival query with line-level alerts."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

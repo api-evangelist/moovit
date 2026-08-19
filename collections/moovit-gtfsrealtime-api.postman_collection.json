@@ -1,0 +1,301 @@
+{
+  "item": [
+    {
+      "id": "7b10be82-8eac-4ea8-80f2-770d894336d0",
+      "name": "GTFSRealtime",
+      "description": {
+        "content": "GTFS-RT feeds for vehicles, trip updates, and service alerts.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "67d1364b-1f05-44e4-82e5-2bffa7963698",
+          "name": "Get GTFS Realtime Feed",
+          "request": {
+            "name": "Get GTFS Realtime Feed",
+            "description": {
+              "content": "GTFS-RT feed for vehicle positions and trip updates in the metro area.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "GTFS",
+                "RT"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/x-protobuf"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "453ccc7c-a15c-4093-82f8-d1b084fd727a",
+              "name": "GTFS-RT protocol buffer payload.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "GTFS",
+                    "RT"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/x-protobuf"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/x-protobuf"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8564b41c-536f-478e-9304-172841ce6e26",
+          "name": "Get GTFS Service Alerts Feed",
+          "request": {
+            "name": "Get GTFS Service Alerts Feed",
+            "description": {
+              "content": "GTFS-RT service alerts feed for the metro area.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "GTFS",
+                "SA_RT"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/x-protobuf"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "23ad52b5-9f62-4daf-a983-b6f69870238b",
+              "name": "GTFS-RT service alerts payload.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "GTFS",
+                    "SA_RT"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/x-protobuf"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/x-protobuf"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "19a84b05-e9d1-4b54-8dc8-07be71ac4048",
+          "name": "Get GTFS Polygon Realtime Feed",
+          "request": {
+            "name": "Get GTFS Polygon Realtime Feed",
+            "description": {
+              "content": "GTFS-RT feed restricted to a geographic polygon.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "GTFS",
+                "Polygon_RT"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "polygon",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/x-protobuf"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9f01e192-262b-43c6-8b55-fd202ff8de0a",
+              "name": "GTFS-RT payload for the polygon.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "GTFS",
+                    "Polygon_RT"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "polygon",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/x-protobuf"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/x-protobuf"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app5.moovitapp.com/services-app/services",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "API_KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "531d82ae-56ea-43ef-b420-5ddef821e5a2",
+    "name": "Moovit Public Transit APIs General GTFSRealtime API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Moovit Public Transit APIs power multimodal trip planning, nearby transit discovery, stops and lines metadata, real-time arrival predictions, and service alerts across more than 3,500 cities in 112 countries. The APIs are tuned for short response times and are used to power Microsoft (Azure Maps), Uber, Lyft, Cubic, and city/transit-agency MaaS deployments. Authentication is HMAC-SHA256 with an API_KEY header plus an Authorization header of the form `hmacauth <signature>:<nonce>:<timestamp>`. All requests must carry a metro identifier (either a USER_LOC lat/lon pair or a MOOVIT_METRO_ID).\n\nContact Support:\n Name: Moovit API Helpdesk\n Email: helpdesk@moovit.com",
+      "type": "text/plain"
+    }
+  }
+}

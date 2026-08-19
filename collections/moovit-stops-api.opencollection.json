@@ -1,0 +1,116 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Moovit Public Transit APIs General Stops API",
+    "version": "5.1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "API_KEY",
+      "value": "{{API_KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Stops",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Stop Basic Info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/Stops/GetStopBasicInfo",
+            "params": [
+              {
+                "name": "stopId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Name, location, transit type, and agency for a stop."
+        },
+        {
+          "info": {
+            "name": "Get Stop Lines",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/Stops/GetStopLines",
+            "params": [
+              {
+                "name": "stopId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lines that serve a stop."
+        },
+        {
+          "info": {
+            "name": "Get Stop Reviews",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/Stops/GetStopReviews",
+            "params": [
+              {
+                "name": "stopId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "User-submitted reviews and ratings for a stop."
+        },
+        {
+          "info": {
+            "name": "Get Stop Photos",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/Stops/GetStopPhotos",
+            "params": [
+              {
+                "name": "stopId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "User-uploaded photos of a stop."
+        },
+        {
+          "info": {
+            "name": "Get Stop Details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/Stops/GetStopDetails",
+            "params": [
+              {
+                "name": "stopId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Aggregated stop information."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

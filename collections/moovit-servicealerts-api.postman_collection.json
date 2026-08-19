@@ -1,0 +1,201 @@
+{
+  "item": [
+    {
+      "id": "81fb2bb0-c6f4-462f-ae1a-08dd64b98934",
+      "name": "ServiceAlerts",
+      "description": {
+        "content": "Metro service alerts and details.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "12c695ce-18ec-4fed-bcee-8d66908d68a8",
+          "name": "Get Metro Service Alerts",
+          "request": {
+            "name": "Get Metro Service Alerts",
+            "description": {
+              "content": "All system-wide service alerts for the metro area.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "General",
+                "GetMetroServiceAlerts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "736e6293-7075-4739-b8a4-236089521f79",
+              "name": "Metro service alerts.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "General",
+                    "GetMetroServiceAlerts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e59c3f6d-1e64-4766-a235-ac8ea77efdad",
+          "name": "Get Alert Details",
+          "request": {
+            "name": "Get Alert Details",
+            "description": {
+              "content": "Detailed information for a single alert.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "General",
+                "GetAlertDetails"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "alertId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "932a0679-a784-4dc9-be4e-d3bbe038d589",
+              "name": "Alert details.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "General",
+                    "GetAlertDetails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "alertId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "API_KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app5.moovitapp.com/services-app/services",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "API_KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "41c25eda-7974-4376-b13f-edba5dffe4c5",
+    "name": "Moovit Public Transit APIs General ServiceAlerts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Moovit Public Transit APIs power multimodal trip planning, nearby transit discovery, stops and lines metadata, real-time arrival predictions, and service alerts across more than 3,500 cities in 112 countries. The APIs are tuned for short response times and are used to power Microsoft (Azure Maps), Uber, Lyft, Cubic, and city/transit-agency MaaS deployments. Authentication is HMAC-SHA256 with an API_KEY header plus an Authorization header of the form `hmacauth <signature>:<nonce>:<timestamp>`. All requests must carry a metro identifier (either a USER_LOC lat/lon pair or a MOOVIT_METRO_ID).\n\nContact Support:\n Name: Moovit API Helpdesk\n Email: helpdesk@moovit.com",
+      "type": "text/plain"
+    }
+  }
+}

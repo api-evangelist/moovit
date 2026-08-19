@@ -1,0 +1,175 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Moovit Public Transit APIs General Lines API",
+    "version": "5.1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "API_KEY",
+      "value": "{{API_KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Lines",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Line Basic Info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/Lines/GetLineBasicInfo",
+            "params": [
+              {
+                "name": "lineId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Line number, name, color, and icon."
+        },
+        {
+          "info": {
+            "name": "Get Line Stops",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/Lines/GetLineStops",
+            "params": [
+              {
+                "name": "lineId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "All stops served by a line."
+        },
+        {
+          "info": {
+            "name": "Get Line Shape",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/Lines/GetLineShape",
+            "params": [
+              {
+                "name": "lineId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Geographic route geometry for a line."
+        },
+        {
+          "info": {
+            "name": "Get Line Pattern Shape",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/Lines/GetLinePatternShape",
+            "params": [
+              {
+                "name": "lineId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "patternId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Pattern-specific geometry for a line variant."
+        },
+        {
+          "info": {
+            "name": "Get Line Schedule",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/Lines/GetLineSchedule",
+            "params": [
+              {
+                "name": "lineId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Timetable for a line."
+        },
+        {
+          "info": {
+            "name": "Get Line Alerts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/Lines/GetLineAlerts",
+            "params": [
+              {
+                "name": "lineId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Service disruptions for a line."
+        },
+        {
+          "info": {
+            "name": "Get Line Reviews",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/Lines/GetLineReviews",
+            "params": [
+              {
+                "name": "lineId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "User feedback for a line."
+        },
+        {
+          "info": {
+            "name": "Get Line Full Info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/Lines/GetLineFullInfo",
+            "params": [
+              {
+                "name": "lineId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Comprehensive line data including stops, shape, schedule, and alerts."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

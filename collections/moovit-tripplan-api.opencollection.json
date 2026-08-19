@@ -1,0 +1,174 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Moovit Public Transit APIs General TripPlan API",
+    "version": "5.1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "API_KEY",
+      "value": "{{API_KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "TripPlan",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Suggested Routes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/TripPlan/GetSuggestedRoutes",
+            "params": [
+              {
+                "name": "fromLat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fromLon",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "toLat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "toLon",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "time",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "timeType",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Optimal multimodal A-to-B itineraries between an origin and destination."
+        },
+        {
+          "info": {
+            "name": "Get Walking Routes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/TripPlan/GetWalkingRoutes",
+            "params": [
+              {
+                "name": "fromLat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fromLon",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "toLat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "toLon",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Pedestrian-only route between two points."
+        },
+        {
+          "info": {
+            "name": "Get Basic Itinerary",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/TripPlan/GetBasicItinerary",
+            "params": [
+              {
+                "name": "itineraryId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Core route details for a previously suggested itinerary."
+        },
+        {
+          "info": {
+            "name": "Get Detailed Itinerary Shape",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/TripPlan/GetDetailedItineraryShape",
+            "params": [
+              {
+                "name": "itineraryId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Geometry for each leg of an itinerary."
+        },
+        {
+          "info": {
+            "name": "Get Detailed Itinerary Schedules",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/TripPlan/GetDetailedItinerarySchedules",
+            "params": [
+              {
+                "name": "itineraryId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Timing information for each leg of an itinerary."
+        },
+        {
+          "info": {
+            "name": "Get Detailed Itinerary",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app5.moovitapp.com/services-app/services/TripPlan/GetDetailedItinerary",
+            "params": [
+              {
+                "name": "itineraryId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Comprehensive routing data including geometry, schedules, and alerts."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
