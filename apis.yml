@@ -40,6 +40,22 @@ tags:
   - MaaS
   - Trip Planning
   - Multimodal Routing
+  - Real-Time
+  - GTFS
+  - GTFS Realtime
+  - Service Alerts
+  - Smart Cities
+  - Transportation
+  - Mobileye
+  - Intel
+tags_raw:
+  - Transit
+  - Public Transit
+  - Mobility
+  - Mobility As A Service
+  - MaaS
+  - Trip Planning
+  - Multimodal Routing
   - Real Time
   - GTFS
   - GTFS Realtime
@@ -58,7 +74,8 @@ apis:
   description: Metro agencies and supported transit types.
   humanURL: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
   baseURL: https://app5.moovitapp.com/services-app/services/
-  tags:
+  tags: []
+  tags_raw:
   - General
   properties:
   - type: OpenAPI
@@ -73,6 +90,8 @@ apis:
   humanURL: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
   baseURL: https://app5.moovitapp.com/services-app/services/
   tags:
+  - GTFS Realtime
+  tags_raw:
   - GTFSRealtime
   properties:
   - type: OpenAPI
@@ -115,6 +134,8 @@ apis:
   humanURL: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
   baseURL: https://app5.moovitapp.com/services-app/services/
   tags:
+  - Real-Time
+  tags_raw:
   - RealTime
   properties:
   - type: OpenAPI
@@ -143,6 +164,8 @@ apis:
   humanURL: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
   baseURL: https://app5.moovitapp.com/services-app/services/
   tags:
+  - Service Alerts
+  tags_raw:
   - ServiceAlerts
   properties:
   - type: OpenAPI
@@ -171,6 +194,8 @@ apis:
   humanURL: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
   baseURL: https://app5.moovitapp.com/services-app/services/
   tags:
+  - Trip Plan
+  tags_raw:
   - TripPlan
   properties:
   - type: OpenAPI
