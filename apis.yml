@@ -102,7 +102,7 @@ apis:
   humanURL: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
   baseURL: https://app5.moovitapp.com/services-app/services/
   tags:
-  - GTFSRealtime
+  - GTFS Realtime
   tags_raw:
   - GTFSRealtime
   properties:
@@ -146,7 +146,7 @@ apis:
   humanURL: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
   baseURL: https://app5.moovitapp.com/services-app/services/
   tags:
-  - RealTime
+  - Real-Time
   tags_raw:
   - RealTime
   properties:
@@ -176,7 +176,7 @@ apis:
   humanURL: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
   baseURL: https://app5.moovitapp.com/services-app/services/
   tags:
-  - ServiceAlerts
+  - Service Alerts
   tags_raw:
   - ServiceAlerts
   properties:
@@ -206,7 +206,7 @@ apis:
   humanURL: https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html
   baseURL: https://app5.moovitapp.com/services-app/services/
   tags:
-  - TripPlan
+  - Trip Plan
   tags_raw:
   - TripPlan
   properties:
