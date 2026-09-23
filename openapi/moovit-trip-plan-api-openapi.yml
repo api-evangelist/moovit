@@ -1,7 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Moovit Public Transit APIs General TripPlan API
-  description: Moovit Public Transit APIs power multimodal trip planning, nearby transit discovery, stops and lines metadata, real-time arrival predictions, and service alerts across more than 3,500 cities in 112 countries. The APIs are tuned for short response times and are used to power Microsoft (Azure Maps), Uber, Lyft, Cubic, and city/transit-agency MaaS deployments. Authentication is HMAC-SHA256 with an API_KEY header plus an Authorization header of the form `hmacauth <signature>:<nonce>:<timestamp>`. All requests must carry a metro identifier (either a USER_LOC lat/lon pair or a MOOVIT_METRO_ID).
+  title: Moovit Public Transit Trip Plan API
+  description: Moovit Public Transit APIs power multimodal trip planning, nearby transit discovery, stops and lines metadata, real-time arrival predictions, and service alerts across more than 3,500 cities in 112 countries.
   version: 5.1.0.0
   contact:
     name: Moovit API Helpdesk
@@ -21,13 +21,13 @@ security:
 - apiKey: []
   hmacAuth: []
 tags:
-- name: TripPlan
+- name: Trip Plan
   description: Multimodal trip planning and itinerary details.
 paths:
   /TripPlan/GetSuggestedRoutes:
     get:
       tags:
-      - TripPlan
+      - Trip Plan
       summary: Get Suggested Routes
       description: Optimal multimodal A-to-B itineraries between an origin and destination.
       parameters:
@@ -70,10 +70,12 @@ paths:
       responses:
         '200':
           description: Suggested itineraries.
+      operationId: getTripPlanGetSuggestedRoutes
+      x-operation-id-source: derived
   /TripPlan/GetWalkingRoutes:
     get:
       tags:
-      - TripPlan
+      - Trip Plan
       summary: Get Walking Routes
       description: Pedestrian-only route between two points.
       parameters:
@@ -104,10 +106,12 @@ paths:
       responses:
         '200':
           description: Walking routes.
+      operationId: getTripPlanGetWalkingRoutes
+      x-operation-id-source: derived
   /TripPlan/GetBasicItinerary:
     get:
       tags:
-      - TripPlan
+      - Trip Plan
       summary: Get Basic Itinerary
       description: Core route details for a previously suggested itinerary.
       parameters:
@@ -119,10 +123,12 @@ paths:
       responses:
         '200':
           description: Basic itinerary.
+      operationId: getTripPlanGetBasicItinerary
+      x-operation-id-source: derived
   /TripPlan/GetDetailedItineraryShape:
     get:
       tags:
-      - TripPlan
+      - Trip Plan
       summary: Get Detailed Itinerary Shape
       description: Geometry for each leg of an itinerary.
       parameters:
@@ -134,10 +140,12 @@ paths:
       responses:
         '200':
           description: Itinerary geometry.
+      operationId: getTripPlanGetDetailedItineraryShape
+      x-operation-id-source: derived
   /TripPlan/GetDetailedItinerarySchedules:
     get:
       tags:
-      - TripPlan
+      - Trip Plan
       summary: Get Detailed Itinerary Schedules
       description: Timing information for each leg of an itinerary.
       parameters:
@@ -149,10 +157,12 @@ paths:
       responses:
         '200':
           description: Itinerary schedules.
+      operationId: getTripPlanGetDetailedItinerarySchedules
+      x-operation-id-source: derived
   /TripPlan/GetDetailedItinerary:
     get:
       tags:
-      - TripPlan
+      - Trip Plan
       summary: Get Detailed Itinerary
       description: Comprehensive routing data including geometry, schedules, and alerts.
       parameters:
@@ -164,6 +174,8 @@ paths:
       responses:
         '200':
           description: Detailed itinerary.
+      operationId: getTripPlanGetDetailedItinerary
+      x-operation-id-source: derived
 components:
   securitySchemes:
     hmacAuth:

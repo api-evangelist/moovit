@@ -1,7 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Moovit Public Transit APIs General ServiceAlerts API
-  description: Moovit Public Transit APIs power multimodal trip planning, nearby transit discovery, stops and lines metadata, real-time arrival predictions, and service alerts across more than 3,500 cities in 112 countries. The APIs are tuned for short response times and are used to power Microsoft (Azure Maps), Uber, Lyft, Cubic, and city/transit-agency MaaS deployments. Authentication is HMAC-SHA256 with an API_KEY header plus an Authorization header of the form `hmacauth <signature>:<nonce>:<timestamp>`. All requests must carry a metro identifier (either a USER_LOC lat/lon pair or a MOOVIT_METRO_ID).
+  title: Moovit Public Transit Service Alerts API
+  description: Moovit Public Transit APIs power multimodal trip planning, nearby transit discovery, stops and lines metadata, real-time arrival predictions, and service alerts across more than 3,500 cities in 112 countries.
   version: 5.1.0.0
   contact:
     name: Moovit API Helpdesk
@@ -21,22 +21,24 @@ security:
 - apiKey: []
   hmacAuth: []
 tags:
-- name: ServiceAlerts
+- name: Service Alerts
   description: Metro service alerts and details.
 paths:
   /General/GetMetroServiceAlerts:
     get:
       tags:
-      - ServiceAlerts
+      - Service Alerts
       summary: Get Metro Service Alerts
       description: All system-wide service alerts for the metro area.
       responses:
         '200':
           description: Metro service alerts.
+      operationId: getGeneralGetMetroServiceAlerts
+      x-operation-id-source: derived
   /General/GetAlertDetails:
     get:
       tags:
-      - ServiceAlerts
+      - Service Alerts
       summary: Get Alert Details
       description: Detailed information for a single alert.
       parameters:
@@ -48,6 +50,8 @@ paths:
       responses:
         '200':
           description: Alert details.
+      operationId: getGeneralGetAlertDetails
+      x-operation-id-source: derived
 components:
   securitySchemes:
     hmacAuth:

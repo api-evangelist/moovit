@@ -1,7 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Moovit Public Transit APIs General Stops API
-  description: Moovit Public Transit APIs power multimodal trip planning, nearby transit discovery, stops and lines metadata, real-time arrival predictions, and service alerts across more than 3,500 cities in 112 countries. The APIs are tuned for short response times and are used to power Microsoft (Azure Maps), Uber, Lyft, Cubic, and city/transit-agency MaaS deployments. Authentication is HMAC-SHA256 with an API_KEY header plus an Authorization header of the form `hmacauth <signature>:<nonce>:<timestamp>`. All requests must carry a metro identifier (either a USER_LOC lat/lon pair or a MOOVIT_METRO_ID).
+  title: Moovit Public Transit Stops API
+  description: Moovit Public Transit APIs power multimodal trip planning, nearby transit discovery, stops and lines metadata, real-time arrival predictions, and service alerts across more than 3,500 cities in 112 countries.
   version: 5.1.0.0
   contact:
     name: Moovit API Helpdesk
@@ -39,6 +39,8 @@ paths:
       responses:
         '200':
           description: Basic stop info.
+      operationId: getStopsGetStopBasicInfo
+      x-operation-id-source: derived
   /Stops/GetStopLines:
     get:
       tags:
@@ -54,6 +56,8 @@ paths:
       responses:
         '200':
           description: Lines serving the stop.
+      operationId: getStopsGetStopLines
+      x-operation-id-source: derived
   /Stops/GetStopReviews:
     get:
       tags:
@@ -69,6 +73,8 @@ paths:
       responses:
         '200':
           description: Reviews and ratings.
+      operationId: getStopsGetStopReviews
+      x-operation-id-source: derived
   /Stops/GetStopPhotos:
     get:
       tags:
@@ -84,6 +90,8 @@ paths:
       responses:
         '200':
           description: Photos for the stop.
+      operationId: getStopsGetStopPhotos
+      x-operation-id-source: derived
   /Stops/GetStopDetails:
     get:
       tags:
@@ -99,6 +107,8 @@ paths:
       responses:
         '200':
           description: Aggregated stop details.
+      operationId: getStopsGetStopDetails
+      x-operation-id-source: derived
 components:
   securitySchemes:
     hmacAuth:
