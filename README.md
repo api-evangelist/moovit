@@ -1,4 +1,4 @@
-# Moovit (moovit)
+# Moovit
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,100 +66,117 @@
 
 Moovit is a Tel Aviv-founded urban mobility company acquired by Intel in May 2020 for approximately $900M and now part of Mobileye's Mobility-as-a- Service (MaaS) business. The Moovit consumer app provides public transit trip planning, real-time arrivals, and service alerts to more than 1.5 billion users across 3,500+ cities in 112+ countries, sourcing both official agency data and crowdsourced transit reports from its global community. Moovit's commercial offering is the Public Transit API suite — a thin, volume-metered HTTP API exposing six API families (Trip Plan, Nearby, Stops, Lines, Real-Time, Service Alerts) plus GTFS-Realtime feeds and a search API. The APIs power Microsoft (Azure Maps), Uber, Lyft, Cubic, and city/transit-agency MaaS deployments. Authentication is HMAC-SHA256 with a metro-scoped request header (USER_LOC or MOOVIT_METRO_ID). Pricing and rate limits are negotiated per customer; there is no self-service developer signup — credentials are issued by helpdesk@moovit.com.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/moovit/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/moovit/refs/heads/main/apis.yml)
+**Areas:** Transit · Public Transit · Mobility · Mobility As A Service · MaaS · Trip Planning · Multimodal Routing · Real-Time · GTFS · GTFS Realtime · Service Alerts · Smart Cities
 
-## Scope
+## Moovit on APIs.io
 
-- **Type:** Index
-- **Position:** Provider
-- **Access:** 3rd-Party
+Everything profiled for Moovit is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/moovit/](https://apis.io/providers/moovit/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (9)
 
-- Transit
-- Public Transit
-- Mobility
-- Mobility As A Service
-- MaaS
-- Trip Planning
-- Multimodal Routing
-- Real Time
-- GTFS
-- GTFS Realtime
-- Service Alerts
-- Smart Cities
-- Transportation
-- Mobileye
-- Intel
+- [Moovit General API](https://apis.io/apis/moovit/moovit-general-api/) — Metro agencies and supported transit types.
+- [Moovit GTFSRealtime API](https://apis.io/apis/moovit/moovit-gtfsrealtime-api/) — GTFS-RT feeds for vehicles, trip updates, and service alerts.
+- [Moovit Lines API](https://apis.io/apis/moovit/moovit-lines-api/) — Line metadata, stops, geometry, schedules, and alerts.
+- [Moovit Nearby API](https://apis.io/apis/moovit/moovit-nearby-api/) — Locate stops, bikes, and scooters near a coordinate.
+- [Moovit RealTime API](https://apis.io/apis/moovit/moovit-realtime-api/) — Live arrival predictions for stops and lines.
+- [Moovit Search API](https://apis.io/apis/moovit/moovit-search-api/) — Search stops and lines by name or number.
+- [Moovit Stops API](https://apis.io/apis/moovit/moovit-stops-api/) — Stop metadata, lines served, reviews, and photos.
+- [Moovit Service Alerts API](https://apis.io/apis/moovit/moovit-service-alerts-api/) — Metro service alerts and details.
+- [Moovit Trip Plan API](https://apis.io/apis/moovit/moovit-trip-plan-api/) — Multimodal trip planning and itinerary details.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-25
-- **Modified:** 2026-05-25
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Moovit Public Transit API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Moovit Public Transit API suite — a thin, volume-metered HTTP API for multimodal trip planning, nearby transit discovery, stops and lines metadata, real-time arrival predictions, service alerts, and GTFS-Realtime feeds. Auth is HMAC-SHA256 over `<timestamp>:<payload>: <nonce>` with an API_KEY header and a USER_LOC or MOOVIT_METRO_ID header that scopes the request to a metro area.
+- [Moovit Agentic Access](https://apis.io/agentic-access/moovit/moovit-agentic-access/)
 
-- **Human URL:** [https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html](https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html)
-- **Base URL:** `https://app5.moovitapp.com/services-app/services/`
+#### Collections (10)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Transit
-- Trip Planning
-- Real Time
-- GTFS
+- [Moovit Public Transit APIs General API](https://apis.io/collections/moovit/open-moovit-general-api/)
+- [Moovit Public Transit APIs General GTFSRealtime API](https://apis.io/collections/moovit/open-moovit-gtfsrealtime-api/)
+- [Moovit Public Transit APIs General Lines API](https://apis.io/collections/moovit/open-moovit-lines-api/)
+- [Moovit Public Transit APIs General Nearby API](https://apis.io/collections/moovit/open-moovit-nearby-api/)
+- [Moovit Public Transit APIs](https://apis.io/collections/moovit/open-moovit-public-transit-api/)
+- [Moovit Public Transit APIs General RealTime API](https://apis.io/collections/moovit/open-moovit-realtime-api/)
+- [Moovit Public Transit APIs General Search API](https://apis.io/collections/moovit/open-moovit-search-api/)
+- [Moovit Public Transit APIs General ServiceAlerts API](https://apis.io/collections/moovit/open-moovit-servicealerts-api/)
+- [Moovit Public Transit APIs General Stops API](https://apis.io/collections/moovit/open-moovit-stops-api/)
+- [Moovit Public Transit APIs General TripPlan API](https://apis.io/collections/moovit/open-moovit-tripplan-api/)
 
-#### Properties
+#### Security (2)
 
-- [Documentation](https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html)
-- [Documentation](https://moovit.com/maas-solutions/transit-apis/)
-- [OpenAPI](openapi/moovit-public-transit-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/moovit-public-transit-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/moovit-public-transit-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Common Properties
+- [Moovit Authentication](https://apis.io/security/moovit/moovit-authentication/)
+- [Moovit Domain Security](https://apis.io/security/moovit/moovit-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://moovit.com)
-- [Consumer App](https://moovitapp.com)
-- [Portal](https://moovit.com/maas-solutions/)
 - [Documentation](https://api-docs.moovit.com/)
-- [Documentation](https://api-docs.moovit.com/api-docs/5.1/MoovitPublicTransitAPIs.html)
-- [Developers](https://moovit.com/developers/)
-- [Product Page](https://moovit.com/maas-solutions/transit-apis/)
-- [Product Page](https://moovit.com/industries/private-sector/)
-- [Industries](https://moovit.com/industries/)
-- [About](https://company.moovit.com/)
-- [Newsroom](https://moovit.com/press-releases/)
-- [Blog](https://moovit.com/blog/)
-- [Insights](https://moovit.com/insights/)
-- [Careers](https://moovit.com/careers/)
 - [Support](https://support.moovitapp.com/hc/en-us)
-- [Contact Sales](https://moovit.com/contact-sales/)
-- [Contact Support](mailto:support@moovitapp.com)
-- [Contact Support](mailto:helpdesk@moovit.com)
-- [Privacy Policy](https://moovit.com/privacy-policy/)
-- [Terms of Service](https://moovit.com/legal/terms-and-conditions/)
-- [Cookie Policy](https://moovit.com/cookies-policy/)
-- [Accessibility](https://moovit.com/accessibility-statement/)
-- [Parent Company](https://www.mobileye.com/)
-- [Parent Company](https://www.intel.com/)
-- [Press Release](https://www.intc.com/news-events/press-releases/detail/6/intel-acquires-moovit-to-accelerate-mobileyes)
-- [GitHub Organization](https://github.com/Moovit)
-- [Twitter](https://twitter.com/moovit)
-- [LinkedIn](https://www.linkedin.com/company/moovit)
-- [Facebook](https://www.facebook.com/moovitapp)
-- [Instagram](https://www.instagram.com/moovit/)
-- [YouTube](https://www.youtube.com/user/MoovitApp)
-- [App Store](https://apps.apple.com/app/moovit/id498477945)
-- [Play Store](https://play.google.com/store/apps/details?id=com.tranzmate)
-- [Wikipedia Page](https://en.wikipedia.org/wiki/Moovit)
-- [Features](undefined)
+- [Blog](https://moovit.com/blog/)
+- [Terms of service](https://moovit.com/legal/terms-and-conditions/)
+- [Privacy policy](https://moovit.com/privacy-policy/)
+- [GitHub](https://github.com/Moovit)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 26.1** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 67.0 |
+| Contract quality | 47.8 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 38.1 |
+| Access clarity | 0.0 |
+
+**Agent readiness 20.0** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 11.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/moovit/](https://apis.io/providers/moovit/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Moovit: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/moovit/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
